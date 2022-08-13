@@ -1,0 +1,5 @@
+package com.xworkz.service;
+
+public class VaccineSaveImpl implements VaccineService {
+
+}

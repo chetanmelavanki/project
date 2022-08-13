@@ -1,0 +1,52 @@
+package com.xworkz.controller;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.xworkz.dto.VaccineDTO;
+import com.xworkz.service.VaccineService;
+
+@Controller
+@RequestMapping("/")
+public class SignInPageController {
+	
+	@Autowired
+	private VaccineService vaccineService;
+	
+	Logger logger = Logger.getLogger(SignInPageController.class);
+	
+	
+	public SignInPageController() {
+//		logger.info(this.getClass().getSimpleName()+ " Bean crated ");
+		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+	}
+	
+	@RequestMapping(value = "/getResourcesLinks.vaccine")
+	public String getResourceLinks() {
+		System.out.println("getResources() Invoked");
+		return "Homepage";
+	}
+	
+	@RequestMapping(value = "/getVaccineResource.vaccine")
+	public String getVaccineResource() {
+		System.out.println("getVaccineResource() Invoked");
+		return "signinpage";
+	}
+	
+	@RequestMapping("getOTP.vaccine")
+	public String onGetOTPClicked(VaccineDTO vaccineDTO,Model model) {
+		//1st read email id from ui
+		System.out.println(vaccineDTO);
+		boolean validateMail=this.vaccineService.validateVaccineEmail(vaccineDTO);
+		if (validateMail) {
+			System.out.println("valid mail adress");
+		}
+		else {
+			System.out.println("invalid email adress");
+		}
+		return "signinpage";
+	}
+}

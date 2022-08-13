@@ -1,0 +1,25 @@
+package com.xworkz.service;
+
+import com.xworkz.dto.VaccineDTO;
+
+public class VaccineSaveImpl implements VaccineService {
+
+	@Override
+	public boolean validateVaccineEmail(VaccineDTO vaccineDTO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getRandomOTP() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean sendEmail(VaccineDTO vaccineDTO) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

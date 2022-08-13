@@ -1,0 +1,23 @@
+package com.xworkz.dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.xworkz.entity.VaccineEntity;
+
+public class VaccineDAOImpl implements VaccineDAO{
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public VaccineDAOImpl() {
+		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+	}
+
+	@Override
+	public boolean saveVaccineOTP(VaccineEntity vaccineEntity) {
+		
+		return false;
+	}
+
+}

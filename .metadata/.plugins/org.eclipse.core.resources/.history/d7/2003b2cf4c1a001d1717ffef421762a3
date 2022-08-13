@@ -1,0 +1,15 @@
+package com.xworkz.service;
+
+import com.xworkz.dto.VaccineDTO;
+
+public interface VaccineService {
+
+	public boolean validateVaccineEmail(VaccineDTO vaccineDTO);
+	
+	public  boolean getRandomOTP() ;
+
+	public boolean sendEmail(VaccineDTO vaccineDTO);
+
+//	public boolean saveData(VaccineDTO vaccineDTO);
+
+}

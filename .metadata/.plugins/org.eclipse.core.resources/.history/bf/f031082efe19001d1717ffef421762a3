@@ -1,0 +1,153 @@
+package com.xworkz.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.xworkz.dto.BikeDTO;
+import com.xworkz.service.BikeService;
+import com.xworkz.service.BikeServiceImpl;
+
+@Controller
+@Component
+@RequestMapping("/")
+public class BikeController {
+
+	@Autowired
+	private BikeService bikeService;
+	
+	Logger logger = Logger.getLogger(BikeController.class);
+
+	public BikeController() {
+		System.out.println(this.getClass().getSimpleName() + "Invoked");
+		logger.info(this.getClass().getSimpleName()+" Bean created from logger");
+	}
+
+	@RequestMapping(value = "/getForm.bike")
+	public String getForm() {
+		System.out.println("getForm() Invoked");
+		return "form";
+	}
+
+	@RequestMapping(value = "/readForm.bike",method = RequestMethod.POST)
+	public String readValue(@ModelAttribute BikeDTO bikeDTO, Model model) {
+//		System.out.println("readValue() Invoked");
+		logger.info("readValue() Invoked");
+		System.out.println("bike name=" + bikeDTO.getBikeName());
+		System.out.println("bike color=" + bikeDTO.getBikeColor());
+		System.out.println("bike brand=" + bikeDTO.getBikeBrand());
+		System.out.println("bike cost=" + bikeDTO.getBikeCost());
+		System.out.println("bike type=" + bikeDTO.getBikeName());
+
+		boolean isUserDatailsvalid = this.bikeService.validateBike(bikeDTO);
+		if (isUserDatailsvalid) {
+			System.out.println("user datails is valid");
+			boolean isSaved = this.bikeService.saveData(bikeDTO);
+			if (isSaved = true) {
+				System.out.println("data saved to db");
+			} else {
+				System.out.println("data is not saved to db");
+			}
+		} else {
+			System.out.println("user datails is Invalid");
+			Map<String, String> map = BikeServiceImpl.map;
+			model.addAttribute("errorName", map.get("bikeName"));
+			model.addAttribute("errorColor", map.get("bikeColor"));
+			model.addAttribute("errorBrand", map.get("bikeBrand"));
+			model.addAttribute("errorCost", map.get("bikeCost"));
+			model.addAttribute("erroType", map.get("bikeType"));
+		}
+
+		return "form";
+	}
+
+	@RequestMapping(value = "/searchBike.bike",method = RequestMethod.POST)
+	public String searchBikeByBikeName(@RequestParam String bikeName, Model model) {
+//		System.out.println("searchBikeByBikeName invoked");
+		logger.info("searchBikeByBikeName invoked");
+		boolean isBikeNameValid = this.bikeService.validateBikeName(bikeName);
+		if (isBikeNameValid = true) {
+			System.out.println("bike name is valid");
+
+			BikeDTO bikeDTO = this.bikeService.getDTOByBikeName(bikeName);
+			if (bikeDTO != null) {
+				model.addAttribute("bikeName", bikeDTO.getBikeName());
+				model.addAttribute("bikeColor", bikeDTO.getBikeColor());
+				model.addAttribute("bikeBrand", bikeDTO.getBikeBrand());
+				model.addAttribute("bikeCost", bikeDTO.getBikeCost());
+				model.addAttribute("bikeType", bikeDTO.getBikeType());
+			} else {
+				model.addAttribute("ErrorBikeName", "Result not found for" + bikeName);
+			}
+		} else {
+			model.addAttribute("ErrorBikeName", "bike not found");
+		}
+		return "form";
+	}
+
+	@RequestMapping(value = "/getAllBikes.bike")
+	public String getAllBikeInformation(Model model) {
+//		System.out.println("getAllInformation Invoked");
+		logger.info("getAllInformation Invoked");
+		List<Object> list = this.bikeService.getListOfBikeObject();
+		
+		model.addAttribute("getAllBike", list);
+		
+		return "form";
+	}
+	
+	@RequestMapping(value = "/deleteBikeByName.bike",method = RequestMethod.POST)
+	public String deleteBikeByName(@RequestParam String bikeName,Model model) {
+//		System.out.println("deleteBikeByName Invoked");
+		logger.info("deleteBikeByName Invoked");
+		boolean isDataValid= this.bikeService.validateBikeName(bikeName);
+		if(isDataValid=true) {
+			boolean deleting= this.bikeService.deleteBikeByName(bikeName);
+			if (deleting=true) {
+				System.out.println("deleted successfully");
+				model.addAttribute("deleteBike", "deleted successfully");
+			} else {
+				System.out.println("not data found");
+				model.addAttribute("deleteBike", "no result found for"+bikeName);
+			}
+		}else {
+			model.addAttribute("deleteBike", "bike name not found");
+		}
+		return "form";
+	}
+	
+	@RequestMapping(value = "/updateFormByBikeName.bike",method = RequestMethod.POST)
+	public String deleteBikeByBikeName(@ModelAttribute BikeDTO bikeDTO, Model model) {
+		System.out.println("deleteBikeByBikeName() Invoked");
+		
+		boolean isUserDatailsvalid = this.bikeService.validateBike(bikeDTO);
+		if (isUserDatailsvalid) {
+			System.out.println("user datails is valid");
+			boolean isupdated = this.bikeService.updateBikeByBikeName(bikeDTO);
+			if (isupdated) {
+				model.addAttribute("ERRORUPDATE", "updated bike entity ..Thank you");
+			} else {
+				model.addAttribute("ERRORUPDATE", "Bike entity is not updated");
+			}
+		} else {
+			System.out.println("user datails is Invalid");
+			Map<String, String> map = BikeServiceImpl.map;
+			model.addAttribute("errorName", map.get("bikeName"));
+			model.addAttribute("errorColor", map.get("bikeColor"));
+			model.addAttribute("errorBrand", map.get("bikeBrand"));
+			model.addAttribute("errorCost", map.get("bikeCost"));
+			model.addAttribute("erroType", map.get("bikeType"));
+		}
+
+		return "form";
+	}
+}

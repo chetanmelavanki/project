@@ -1,0 +1,30 @@
+package com.xworkz.service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.xworkz.dto.VaccineDTO;
+
+@Service
+public class VaccineServiceImpl implements VaccineService{
+	
+	Map map=new HashMap<>();
+
+	@Override
+	public boolean validateVaccineEmail(VaccineDTO vaccineDTO) {
+		boolean flag=false;
+		if (!vaccineDTO.getUserEmail().isBlank() && !vaccineDTO.getUserEmail().isEmpty() && vaccineDTO.getUserEmail() != null) {
+			flag=true;
+			System.out.println("valid mail id");
+			map.put("mailId", "valid mail id");
+		} else {
+			flag=false;
+			System.out.println("please enter crt mail id");
+			return flag;
+		}
+		return flag;
+	}
+
+}

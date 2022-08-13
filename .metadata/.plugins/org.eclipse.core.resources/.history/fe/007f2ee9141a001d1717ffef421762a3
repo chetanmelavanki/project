@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vaccine form</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<body>
+	<h1>Resources links</h1>
+	<a href="http://localhost:8080/vaccine-app/getOTP.vaccine">Link for sign in page</a>
+</body>
+</head>
+</html>

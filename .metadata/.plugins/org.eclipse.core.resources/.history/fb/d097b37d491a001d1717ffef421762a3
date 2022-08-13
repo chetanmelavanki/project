@@ -1,0 +1,19 @@
+package com.xworkz.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "vaccine_table")
+public class VaccineEntity {
+	
+	@Id
+	@Column(name = "vaccine_otp_id")
+	@GenericGenerator(name = "x",strategy = "increment")
+	private int id;
+	private int otp;
+}

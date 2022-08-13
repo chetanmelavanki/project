@@ -1,0 +1,51 @@
+package com.xworkz.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "vaccine_table")
+public class VaccineEntity {
+	
+	@Id
+	@Column(name = "vaccine_otp_id")
+	@GenericGenerator(name = "x",strategy = "increment")
+	@GeneratedValue(generator = "x")
+	private int id;
+	@Column(name = "vaccine_otp")
+	private int otp;
+	
+	public VaccineEntity() {
+		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+	}
+	
+	
+	
+	public VaccineEntity(int id, int otp) {
+		super();
+		this.id = id;
+		this.otp = otp;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getOtp() {
+		return otp;
+	}
+	public void setOtp(int otp) {
+		this.otp = otp;
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.xworkz.service;
+
+import com.xworkz.dto.VaccineDTO;
+
+public interface VaccineService {
+
+	boolean validateVaccineEmail(VaccineDTO vaccineDTO);
+	
+	
+}

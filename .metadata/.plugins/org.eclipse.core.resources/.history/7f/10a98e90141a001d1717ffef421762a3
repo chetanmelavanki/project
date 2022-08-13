@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vaccine form</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <body>
+        <header>
+            <h1>Sign in for vaccination</h1>
+        </header>
+
+        <div>
+            <form>
+                <input type="email" name="userEmail" placeholder="Enter email">
+                <br> <br>
+                <input type="submit" value="Get OTP ">
+            </form>
+        </div>
+        <footer></footer>
+    </body>
+</head>
+</html>

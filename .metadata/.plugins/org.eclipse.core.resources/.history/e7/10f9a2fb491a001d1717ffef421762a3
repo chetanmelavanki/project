@@ -1,0 +1,13 @@
+package com.xworkz.dao;
+
+import com.xworkz.entity.VaccineEntity;
+
+public class VaccineDAOImpl implements VaccineDAO{
+
+	@Override
+	public boolean saveVaccineOTP(VaccineEntity vaccineEntity) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

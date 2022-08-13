@@ -1,0 +1,12 @@
+package com.xworkz.dto;
+
+import org.apache.log4j.Logger;
+
+public class VaccineDTO {
+	String userEmail;
+	
+	Logger logger = Logger.getLogger(VaccineDTO.class);
+	public VaccineDTO() {
+		
+	}
+}
