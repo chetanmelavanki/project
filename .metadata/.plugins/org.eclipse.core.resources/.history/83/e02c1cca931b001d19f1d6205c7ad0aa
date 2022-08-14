@@ -1,0 +1,10 @@
+package com.xworkz.dao;
+
+import com.xworkz.entity.VaccineEntity;
+
+public interface VaccineDAO {
+	
+	public boolean saveVaccineOTP(VaccineEntity vaccineEntity);
+
+	
+}

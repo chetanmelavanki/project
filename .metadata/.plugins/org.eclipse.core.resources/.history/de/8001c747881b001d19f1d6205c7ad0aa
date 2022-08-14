@@ -1,0 +1,25 @@
+package com.xworkz.service;
+
+import com.xworkz.dto.VaccineVerifyOTPDTO;
+
+public class VerifyVaccineOTPServiceImpl implements VerifyVaccineOTPService{
+
+	
+	public VerifyVaccineOTPServiceImpl() {
+		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+	}
+	@Override
+	public boolean validateOTP(VaccineVerifyOTPDTO vaccineVerifyOTPDTO) {
+		System.out.println("validateOTP() Invoked");
+		boolean flag=false;
+		if (!vaccineVerifyOTPDTO.getOtp().isEmpty() && !vaccineVerifyOTPDTO.getOtp().isBlank() && vaccineVerifyOTPDTO != null) {
+			flag=true;
+			System.out.println("valid otp");
+		} else {
+			flag=false;
+			System.out.println("Invalid otp ..enter correct 6 digit otp");
+		}
+		return false;
+	}
+
+}

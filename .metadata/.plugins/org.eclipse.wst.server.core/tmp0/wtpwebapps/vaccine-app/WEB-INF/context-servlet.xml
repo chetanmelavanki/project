@@ -37,7 +37,7 @@
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<constructor-arg name="prefix" value="/WEB-INF/"></constructor-arg>
+		<constructor-arg name="prefix" value="/WEB-INF/pages/"></constructor-arg>
 		<constructor-arg name="suffix" value=".jsp"></constructor-arg>
 	</bean>
 	<bean class="org.springframework.mail.javamail.JavaMailSenderImpl">

@@ -1,0 +1,8 @@
+package com.xworkz.service;
+
+public interface VerifyVaccineOTPService {
+
+	public boolean validateOTP(String vaccineVerifyOTPDTO);
+
+	public boolean getOTPFromDb(String vaccineVerifyOTPDTO);
+}

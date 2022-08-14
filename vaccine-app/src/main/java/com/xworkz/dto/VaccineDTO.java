@@ -3,12 +3,12 @@ package com.xworkz.dto;
 import org.apache.log4j.Logger;
 
 public class VaccineDTO {
-	String userEmail;
-	
+	private String userEmail;
+
 	Logger logger = Logger.getLogger(VaccineDTO.class);
-	
+
 	public VaccineDTO() {
-		logger.info(this.getClass().getSimpleName()+ " Bean crated ");
+		logger.info(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	public String getUserEmail() {
@@ -23,6 +23,5 @@ public class VaccineDTO {
 	public String toString() {
 		return "VaccineDTO [userEmail=" + userEmail + "]";
 	}
-	
-	
+
 }

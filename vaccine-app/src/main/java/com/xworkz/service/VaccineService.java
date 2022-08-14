@@ -5,8 +5,8 @@ import com.xworkz.dto.VaccineDTO;
 public interface VaccineService {
 
 	public boolean validateVaccineEmail(VaccineDTO vaccineDTO);
-	
-	public  boolean getRandomOTP() ;
+
+	public boolean getRandomOTP();
 
 	public boolean sendEmail(VaccineDTO vaccineDTO);
 

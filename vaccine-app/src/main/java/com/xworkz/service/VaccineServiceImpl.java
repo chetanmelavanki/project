@@ -16,20 +16,20 @@ import com.xworkz.entity.VaccineEntity;
 
 @Service
 public class VaccineServiceImpl implements VaccineService {
-	
+
 	public VaccineServiceImpl() {
-		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
 
 	}
 
 	public static Map map = new HashMap<>();
-	public static VaccineEntity vaccineEntity=null;
+	public static VaccineEntity vaccineEntity = null;
 
 	String key = null;
 
 	@Autowired
 	private JavaMailSender javaMailSender;
-	
+
 	@Autowired
 	private VaccineDAO vaccineDAO;
 
@@ -84,11 +84,11 @@ public class VaccineServiceImpl implements VaccineService {
 	@Override
 	public boolean saveData(VaccineDTO vaccineDTO) {
 		System.out.println("saveData Invoked");
-		
-		vaccineEntity=new VaccineEntity();
+
+		vaccineEntity = new VaccineEntity();
 		vaccineEntity.setOtp(key);
 		BeanUtils.copyProperties(vaccineDTO, vaccineEntity);
-		
+
 		return this.vaccineDAO.saveVaccineOTP(vaccineEntity);
 	}
 

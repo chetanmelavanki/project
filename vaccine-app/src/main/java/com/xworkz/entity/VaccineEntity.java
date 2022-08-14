@@ -11,18 +11,18 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "vaccine_table")
 public class VaccineEntity {
-	
+
 	@Id
 	@Column(name = "vaccine_otp_id")
-	@GenericGenerator(name = "x",strategy = "increment")
+	@GenericGenerator(name = "x", strategy = "increment")
 	@GeneratedValue(generator = "x")
 	private int id;
-	
+
 	@Column(name = "vaccine_otp")
 	private String otp;
-	
+
 	public VaccineEntity() {
-		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	public int getId() {
@@ -45,9 +45,5 @@ public class VaccineEntity {
 	public String toString() {
 		return "VaccineEntity [id=" + id + ", otp=" + otp + "]";
 	}
-	
-	
-	
-	
-		
+
 }

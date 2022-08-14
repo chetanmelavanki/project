@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 import com.xworkz.entity.VaccineEntity;
 
 @Component
-public class VaccineDAOImpl implements VaccineDAO{
-	
+public class VaccineDAOImpl implements VaccineDAO {
+
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	public VaccineDAOImpl() {
-		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
+		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	@Override
