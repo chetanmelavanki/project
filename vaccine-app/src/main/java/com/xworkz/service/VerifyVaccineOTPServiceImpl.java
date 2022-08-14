@@ -17,11 +17,10 @@ public class VerifyVaccineOTPServiceImpl implements VerifyVaccineOTPService {
 	}
 
 	@Override
-	public boolean validateOTP(VaccineVerifyOTPDTO vaccineVerifyOTPDTO) {
+	public boolean validateOTP(String otp) {
 		System.out.println("validateOTP() Invoked");
 		boolean flag = false;
-		if (!vaccineVerifyOTPDTO.getOtp().isEmpty() && !vaccineVerifyOTPDTO.getOtp().isBlank()
-				&& vaccineVerifyOTPDTO != null) {
+		if (!otp.isEmpty() && !otp.isBlank() && otp != null) {
 			flag = true;
 			System.out.println("valid otp");
 		} else {

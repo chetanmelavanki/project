@@ -49,3 +49,7 @@ Aug 14, 2022 09:35:53.137 [5496:20412:0814/093553.137:ERROR:device_event_log_imp
 Aug 14, 2022 10:38:24.219 [5496:20320:0814/103824.218:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -106
 Aug 14, 2022 11:13:54.580 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
 Aug 14, 2022 11:14:54.526 [7008:9028:0814/111454.525:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+Aug 14, 2022 11:38:25.133 NEW SESSION
+Aug 14, 2022 11:38:25.134 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+Aug 14, 2022 11:39:25.97 [21116:10680:0814/113925.096:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

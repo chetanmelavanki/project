@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xworkz.dto.VaccineDTO;
@@ -41,7 +42,7 @@ public class SignInPageController {
 	}
 
 	@RequestMapping(value = "getOTP.vaccine")
-	public String onGetOTPClicked(VaccineDTO vaccineDTO, Model model) {
+	public String onGetOTPClicked(@ModelAttribute VaccineDTO vaccineDTO, Model model) {
 		// 1st read email id from ui
 		System.out.println("onGetOTPClicked() Invoked");
 		System.out.println(vaccineDTO);

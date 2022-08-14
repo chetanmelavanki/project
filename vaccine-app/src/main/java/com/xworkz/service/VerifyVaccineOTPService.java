@@ -1,9 +1,7 @@
 package com.xworkz.service;
 
-import com.xworkz.dto.VaccineVerifyOTPDTO;
-
 public interface VerifyVaccineOTPService {
 
-	public boolean validateOTP(VaccineVerifyOTPDTO vaccineVerifyOTPDTO);
+	public boolean validateOTP(String otp);
 
 }

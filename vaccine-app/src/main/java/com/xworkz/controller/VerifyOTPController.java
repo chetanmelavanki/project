@@ -3,6 +3,7 @@ package com.xworkz.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.dto.VaccineVerifyOTPDTO;
 import com.xworkz.service.VerifyVaccineOTPService;
@@ -25,13 +26,13 @@ public class VerifyOTPController {
 	}
 
 	@RequestMapping(value = "/verifyOTP.vaccine")
-	public String onVerifyOTP(VaccineVerifyOTPDTO vaccineVerifyOTPDTO) {
+	public String onVerifyOTP(@RequestParam String otp) {
 		System.out.println("onVerifyOTP() Invoked");
-		System.out.println(vaccineVerifyOTPDTO);
-		boolean isOTPValid = this.vaccineOTPService.validateOTP(vaccineVerifyOTPDTO);
+		System.out.println(otp);
+		boolean isOTPValid = this.vaccineOTPService.validateOTP(otp);
 		if (isOTPValid) {
 			System.out.println("otp is valid");
-
+			
 		} else {
 			System.out.println("otp is invalid");
 		}
