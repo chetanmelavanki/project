@@ -1,0 +1,30 @@
+package com.xworkz.dto;
+
+import org.apache.log4j.Logger;
+
+import com.xworkz.controller.SignInPageController;
+
+public class VaccineVerifyOTPDTO {
+	Logger logger = Logger.getLogger(VaccineVerifyOTPDTO.class);
+
+	private String otp;
+
+	public VaccineVerifyOTPDTO() {
+//		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+		logger.info("");
+	}
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
+	@Override
+	public String toString() {
+		return "VaccineVerifyOTPDTO [otp=" + otp + "]";
+	}
+
+}

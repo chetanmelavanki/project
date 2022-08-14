@@ -1,0 +1,57 @@
+package com.xworkz.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.xworkz.dto.VaccineVerifyOTPDTO;
+import com.xworkz.entity.VaccineEntity;
+import com.xworkz.service.VerifyVaccineOTPService;
+
+@Controller
+@RequestMapping("/")
+public class VerifyOTPController {
+
+	@Autowired
+	private VerifyVaccineOTPService vaccineOTPService;
+
+	public VerifyOTPController() {
+		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+	}
+
+	@RequestMapping(value = "/enterVaccineOTP.vaccine")
+	public String getVaccineOTPResource() {
+		System.out.println("getVaccineResource() Invoked");
+		return "VerifyOTPPage";
+	}
+
+	@RequestMapping(value = "/verifyOTP.vaccine")
+	public String onVerifyOTP(@RequestParam String otp) {
+		VaccineEntity vaccineEntity=null;
+		System.out.println("onVerifyOTP() Invoked");
+		System.out.println("fetched from page = "+otp);
+		boolean isOTPValid = this.vaccineOTPService.validateOTP(otp);
+		if (isOTPValid) {
+			System.out.println("otp is valid");
+			VaccineVerifyOTPDTO vaccineVerifyOTPDTO=this.vaccineOTPService.getVaccineOTP(otp);
+			System.out.println("fetched from db = "+vaccineVerifyOTPDTO);
+			System.out.println("-------------checking a otp from page is equal to otp from db -----------------");
+			if (vaccineVerifyOTPDTO!=null) {
+				if (vaccineVerifyOTPDTO.getOtp().equals(otp)) {
+					System.out.println("sign in successfully");
+				}
+				else {
+					System.out.println("enter correct otp");
+				}
+				else {
+					System.out.println("otp does not match from page to otp");
+				}
+			}
+			
+		} else {
+			System.out.println("otp is invalid");
+		}
+		return "VerifyOTPPage";
+	}
+}

@@ -1,0 +1,87 @@
+package com.xworkz.controller;
+
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.xworkz.dto.VaccineDTO;
+import com.xworkz.service.VaccineService;
+import com.xworkz.service.VaccineServiceImpl;
+
+@Controller
+@RequestMapping("/")
+public class SignInPageController {
+
+	@Autowired
+	private VaccineService vaccineService;
+
+	Map map = VaccineServiceImpl.map;
+
+	Logger logger = Logger.getLogger(SignInPageController.class);
+
+	public SignInPageController() {
+		logger.info(this.getClass().getSimpleName()+ " Bean crated ");
+//		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+	}
+
+	@RequestMapping(value = "/getResourcesLinks.vaccine")
+	public String getResourceLinks() {
+//		System.out.println("getResources() Invoked");
+		logger.info("getResources() Invoked");
+		return "Homepage";
+	}
+
+	@RequestMapping(value = "/getVaccine.vaccine")
+	public String getVaccineResource() {
+//		System.out.println("getVaccineResource() Invoked");
+		logger.info("getVaccineResource() Invoked");
+		return "signinpage";
+	}
+
+	@RequestMapping(value = "getOTP.vaccine")
+	public String onGetOTPClicked(@ModelAttribute VaccineDTO vaccineDTO, Model model) {
+		// 1st read email id from ui
+//		System.out.println("onGetOTPClicked() Invoked");
+		logger.info("onGetOTPClicked() Invoked");
+		System.out.println(vaccineDTO);
+		boolean validateMail = this.vaccineService.validateVaccineEmail(vaccineDTO);
+		if (validateMail) {
+//			System.out.println("valid mail adress");
+			logger.info("valid mail adress");
+			boolean otp = this.vaccineService.getRandomOTP();
+			if (otp = true) {
+//				System.out.println("otp get successfully");
+				logger.info("otp get successfully");
+				boolean sendMail = this.vaccineService.sendEmail(vaccineDTO);
+				if (sendMail) {
+//					System.out.println("mail sent successfully");
+					logger.info("mail sent successfully");
+					model.addAttribute("errorSend", "mail sent successfully");
+					boolean isOtpSaved = this.vaccineService.saveData(vaccineDTO);
+					if (isOtpSaved = true) {
+//						System.out.println("saved succedssfully");
+						logger.info("saved to db succedssfully");
+					} else {
+//						System.out.println("not saved to db");
+						logger.info("not saved to db");
+					}
+
+				} else {
+					System.out.println("email not sent ");
+					model.addAttribute("errorSend", "mail not sent");
+				}
+			} else {
+				System.out.println("not get otp");
+			}
+		} else {
+			System.out.println("invalid email adress");
+			model.addAttribute("errorMail", map.get("mailId"));
+		}
+		return "signinpage";
+	}
+}

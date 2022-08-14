@@ -12,8 +12,7 @@ body {
 <body>
 	<h1>Resources links</h1>
 	<a href="http://localhost:8080/vaccine-app/getVaccine.vaccine">Link for sign in page</a>
-	<br><br>
-	<a href="http://localhost:8080/vaccine-app/enterVaccineOTP.vaccine">Link for enter OTP page</a>
+	
 	
 </body>
 </head>

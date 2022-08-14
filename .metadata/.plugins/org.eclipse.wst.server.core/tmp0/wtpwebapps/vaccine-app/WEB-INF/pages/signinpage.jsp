@@ -16,9 +16,12 @@ body {
 	<h3>An OTP will be send to your mail address</h3>
 	<div>
 		<form action="getOTP.vaccine" method="post">
-			<input type="email" name="userEmail" placeholder="Enter email">
+			<input type="email" name="userEmail" placeholder="Enter email"><br>
 			<a style="color: red">${errorMail}${errorSend}</a> <br> <br>
-			<input type="submit" value="Get OTP ">
+			<input type="submit" value="Get OTP "> <br>
+			<br> <a
+				href="http://localhost:8080/vaccine-app/enterVaccineOTP.vaccine">Link
+				for enter OTP page</a>
 		</form>
 	</div>
 	<footer></footer>

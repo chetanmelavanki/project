@@ -19,6 +19,7 @@ body {
 			<input type="text" name="otp" placeholder="Enter otp">
 			<br><br>
 			<input type="submit" value="Verify & Proceed ">
+			
 		</form>
 	</div>
 	<footer></footer>

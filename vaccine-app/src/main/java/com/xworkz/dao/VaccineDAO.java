@@ -6,4 +6,6 @@ public interface VaccineDAO {
 
 	public boolean saveVaccineOTP(VaccineEntity vaccineEntity);
 
+	public VaccineEntity findVaccineOTP(String otp);
+
 }
