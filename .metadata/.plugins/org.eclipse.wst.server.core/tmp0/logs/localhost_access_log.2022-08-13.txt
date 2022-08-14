@@ -22,3 +22,17 @@
 0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:01:46 +0530] "POST /vaccine-app/getOTP.vaccine HTTP/1.1" 200 480
 127.0.0.1 - - [13/Aug/2022:10:05:28 +0530] "GET / HTTP/1.1" 404 751
 0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:05:48 +0530] "POST /vaccine-app/getOTP.vaccine HTTP/1.1" 200 480
+127.0.0.1 - - [13/Aug/2022:10:14:56 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:14:59 +0530] "GET /vaccine-app/ HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:15:00 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:15:02 +0530] "GET /vaccine-app/getVaccine.vaccine HTTP/1.1" 200 458
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:15:12 +0530] "POST /vaccine-app/getOTP.vaccine HTTP/1.1" 200 480
+127.0.0.1 - - [13/Aug/2022:10:48:52 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:48:53 +0530] "GET /vaccine-app/ HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:48:55 +0530] "GET /vaccine-app/getVaccine.vaccine HTTP/1.1" 200 458
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:10:49:05 +0530] "POST /vaccine-app/getOTP.vaccine HTTP/1.1" 200 480
+127.0.0.1 - - [13/Aug/2022:14:28:52 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:14:28:56 +0530] "GET /vaccine-app/ HTTP/1.1" 200 267
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:14:28:56 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:14:28:59 +0530] "GET /vaccine-app/getVaccine.vaccine HTTP/1.1" 200 458
+0:0:0:0:0:0:0:1 - - [13/Aug/2022:14:29:43 +0530] "POST /vaccine-app/getOTP.vaccine HTTP/1.1" 200 480

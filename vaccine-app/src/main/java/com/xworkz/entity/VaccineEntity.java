@@ -19,28 +19,25 @@ public class VaccineEntity {
 	private int id;
 	
 	@Column(name = "vaccine_otp")
-	private int otp;
+	private String otp;
 	
 	public VaccineEntity() {
 		System.out.println(this.getClass().getSimpleName()+ " Bean crated ");
-	}
-	
-	
-	
-	public VaccineEntity(int id, int otp) {
-		this.otp = otp;
 	}
 
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getOtp() {
+
+	public String getOtp() {
 		return otp;
 	}
-	public void setOtp(int otp) {
+
+	public void setOtp(String otp) {
 		this.otp = otp;
 	}
 
@@ -48,5 +45,9 @@ public class VaccineEntity {
 	public String toString() {
 		return "VaccineEntity [id=" + id + ", otp=" + otp + "]";
 	}
+	
+	
+	
+	
 		
 }
