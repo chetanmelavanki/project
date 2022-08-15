@@ -63,14 +63,14 @@ public class SignInPageController {
 				if (sendMail) {
 //					System.out.println("mail sent successfully");
 					logger.info("mail sent successfully");
-					model.addAttribute("errorSend", "mail sent successfully");
+					model.addAttribute("errorSend", "OTP sent to the mail successfully");
 					boolean isOtpSaved = this.vaccineService.saveData(vaccineDTO);
 					if (isOtpSaved = true) {
 //						System.out.println("saved succedssfully");
-						logger.info("saved succedssfully");
+						logger.info("OTP saved to the Db");
 					} else {
 //						System.out.println("not saved to db");
-						logger.info("not saved to db");
+						logger.info("OTP not saved to db");
 					}
 
 				} else {

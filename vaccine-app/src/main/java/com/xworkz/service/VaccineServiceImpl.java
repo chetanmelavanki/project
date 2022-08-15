@@ -80,6 +80,7 @@ public class VaccineServiceImpl implements VaccineService {
 			SimpleMailMessage mailMessage = new SimpleMailMessage();
 			mailMessage.setTo(vaccineDTO.getUserEmail());
 			mailMessage.setFrom("Chetanmelavanki@outlook.com");
+			mailMessage.setSubject("Vaccination OTP");
 			mailMessage.setText("your Vaccination OTP is " + key);
 			this.javaMailSender.send(mailMessage);
 			flag = true;
