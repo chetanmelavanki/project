@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +11,7 @@ body {
 	background-size: cover;
 	font-family: sans-serif;
 	text-align: center;
+	background-color: floralwhite;
 }
 
 header {
@@ -27,7 +26,14 @@ header {
 	box-shadow: 0 0 25px 0 black;
 }
 
-
+form {
+	width: 300px;
+	border: 5px solid black;
+	padding: 50px;
+	margin: 20px;
+	background-color: lightyellow;
+	margin-left: 517px;
+}
 
 .footer {
 	position: fixed;
@@ -51,8 +57,8 @@ header {
 	<h3>An OTP will be send to your mail address</h3>
 	<div>
 		<form action="getOTP.vaccine" method="post">
-			<input type="email" name="userEmail" placeholder="Enter email"><br>
-			<a style="color: red">${errorMail}${errorSend}</a> <br> <br>
+			<input type="email" name="userEmail" placeholder="Enter email" ><br>
+			<a style="color: red">${errorMail}${errorSend}</a> <br>
 			<input type="submit" value="Get OTP "> <br> <br> <a
 				href="http://localhost:8080/vaccine-app/enterVaccineOTP.vaccine">Link
 				for enter OTP page</a>

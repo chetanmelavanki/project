@@ -26,7 +26,14 @@ header {
 	box-shadow: 0 0 25px 0 black;
 }
 
-
+form {
+	width: 300px;
+	border: 5px solid black;
+	padding: 50px;
+	margin: 20px;
+	background-color: lightyellow;
+	margin-left: 520px;
+}
 
 .footer {
 	position: fixed;
@@ -44,7 +51,7 @@ header {
 	<header>
 		<nav></nav>
 	</header>
-	<h1>Enter OTP</h1>
+	<h1>Enter OTP to login</h1>
 	<div>
 		<form action="verifyOTP.vaccine" method="post">
 			<input type="text" name="otp" placeholder="Enter otp"> <br>
