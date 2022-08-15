@@ -4,21 +4,26 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.xworkz.controller.VerifyOTPController;
 import com.xworkz.dao.VaccineDAO;
 import com.xworkz.dto.VaccineDTO;
 import com.xworkz.entity.VaccineEntity;
 
 @Service
 public class VaccineServiceImpl implements VaccineService {
+	
+	static final Logger logger = Logger.getLogger(VaccineServiceImpl.class);
+
 
 	public VaccineServiceImpl() {
-		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+		logger.info(this.getClass().getSimpleName() + " Bean crated ");
 
 	}
 
@@ -39,10 +44,12 @@ public class VaccineServiceImpl implements VaccineService {
 		if (!vaccineDTO.getUserEmail().isBlank() && !vaccineDTO.getUserEmail().isEmpty()
 				&& vaccineDTO.getUserEmail() != null) {
 			flag = true;
-			System.out.println("valid mail id");
+//			System.out.println("valid mail id");
+			logger.info("valid mail id");
 		} else {
 			flag = false;
-			System.out.println("please enter crt mail id");
+//			System.out.println("please enter crt mail id");
+			logger.info("please enter crt mail id");
 			map.put("mailId", "please enter crt mail id");
 			return flag;
 		}
@@ -60,12 +67,14 @@ public class VaccineServiceImpl implements VaccineService {
 //	    return String.format("%06d", number);
 //	    System.out.println(String.format("%06d", number));
 		key = String.format("%06d", number);
-		System.out.println(key);
+//		System.out.println(key);
+		logger.info(key);
 		return false;
 	}
 
 	@Override
 	public boolean sendEmail(VaccineDTO vaccineDTO) {
+		logger.info("sendEmail() Invoked");
 		boolean flag = false;
 		try {
 			SimpleMailMessage mailMessage = new SimpleMailMessage();
@@ -83,7 +92,8 @@ public class VaccineServiceImpl implements VaccineService {
 
 	@Override
 	public boolean saveData(VaccineDTO vaccineDTO) {
-		System.out.println("saveData Invoked");
+//		System.out.println("saveData Invoked");
+		logger.info("saveData Invoked");
 
 		vaccineEntity = new VaccineEntity();
 		vaccineEntity.setOtp(key);

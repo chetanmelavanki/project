@@ -1,5 +1,6 @@
 package com.xworkz.dao;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -7,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.xworkz.controller.VerifyOTPController;
 import com.xworkz.entity.VaccineEntity;
 
 @Component
@@ -14,9 +16,12 @@ public class VaccineDAOImpl implements VaccineDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	static final Logger logger = Logger.getLogger(VaccineDAOImpl.class);
 
 	public VaccineDAOImpl() {
-		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+//		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+		logger.info(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	@Override
@@ -28,15 +33,18 @@ public class VaccineDAOImpl implements VaccineDAO {
 			transaction = session.beginTransaction();
 			session.save(vaccineEntity);
 			transaction.commit();
-			System.out.println("vaccine entity is saved");
+//			System.out.println("vaccine entity is saved");
+			logger.info("vaccine entity is saved");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			if (session != null) {
 				session.clear();
-				System.out.println("session is closed");
+//				System.out.println("session is closed");
+				logger.info("session is closed");
 			} else {
-				System.out.println("session is not closed");
+//				System.out.println("session is not closed");
+				logger.info("session is not closed");
 			}
 		}
 		return false;
@@ -55,9 +63,11 @@ public class VaccineDAOImpl implements VaccineDAO {
 			Object object=query.uniqueResult();
 			vaccineEntity=(VaccineEntity)object;
 			if (vaccineEntity != null) {
-				System.out.println("vaccine otp="+vaccineEntity);
+//				System.out.println("vaccine otp="+vaccineEntity);
+				logger.info("vaccine otp="+vaccineEntity);
 			} else {
-				System.out.println("vaccine Entity (OTP) not found");
+//				System.out.println("vaccine Entity (OTP) not found");
+				logger.info("vaccine otp="+vaccineEntity);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -65,9 +75,11 @@ public class VaccineDAOImpl implements VaccineDAO {
 		}finally {
 			if (session != null) {
 				session.clear();
-				System.out.println("session is closed");
+//				System.out.println("session is closed");
+				logger.info("session is closed");
 			} else {
-				System.out.println("session is not closed");
+//				System.out.println("session is not closed");
+				logger.info("session is not closed");
 			}
 		}
 		return vaccineEntity;

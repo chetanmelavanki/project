@@ -6,23 +6,55 @@
 <title>Vaccine form</title>
 <style>
 body {
+	height: 125vh;
+	margin-top: 80px;
+	padding: 30px;
+	background-size: cover;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+header {
+	background-color: orange;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 5px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 0 25px 0 black;
+}
+
+
+
+.footer {
+	position: fixed;
+	left: 0px;
+	bottom: 5px;
+	right: 0px;
+	width: 100%;
+	height: 30px;
+	background-color: orange;
+	box-shadow: 0 0 25px 0 black;
 	text-align: center;
 }
 </style>
 <body>
 	<header>
-		<h1>Enter OTP</h1>
+		<nav></nav>
 	</header>
-		
+	<h1>Enter OTP</h1>
 	<div>
 		<form action="verifyOTP.vaccine" method="post">
-			<input type="text" name="otp" placeholder="Enter otp">
-			<br><br>
-			<input type="submit" value="Verify & Proceed ">
-			
+			<input type="text" name="otp" placeholder="Enter otp"> <br>
+			<br> <input type="submit" value="Verify & Proceed "><br>
+			<a style="color: red">${OTP}</a>
+
 		</form>
 	</div>
-	<footer></footer>
+	<div class="footer">Copyright © 2021 Co-WIN. All Rights Reserved
+	</div>
 </body>
 </head>
 </html>

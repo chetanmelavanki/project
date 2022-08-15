@@ -71,3 +71,13 @@ Aug 14, 2022 13:41:12.100 [21780:12080:0814/134112.100:ERROR:util.cc(127)] Can't
 Aug 14, 2022 13:46:59.127 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
 Aug 14, 2022 13:47:06.242 [12684:6788:0814/134706.241:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -105
 Aug 14, 2022 13:48:26.586 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+
+Aug 14, 2022 17:43:17.800 NEW SESSION
+Aug 14, 2022 17:43:17.800 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+Aug 14, 2022 17:44:17.767 [2904:18520:0814/174417.766:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+Aug 15, 2022 09:21:33.349 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+Aug 15, 2022 09:22:33.261 [10780:15244:0815/092233.261:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+Aug 15, 2022 11:06:04.756 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+Aug 15, 2022 11:07:04.620 [22560:15824:0815/110704.620:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+Aug 15, 2022 11:35:03.899 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "web_app.WebAppProto" because it is missing required fields: (cannot determine missing fields for lite message)
+Aug 15, 2022 11:36:03.852 [2584:11056:0815/113603.852:ERROR:util.cc(127)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

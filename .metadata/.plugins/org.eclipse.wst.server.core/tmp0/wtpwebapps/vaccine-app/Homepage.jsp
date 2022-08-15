@@ -10,10 +10,12 @@ body {
 }
 </style>
 <body>
+	<header style="color: black;"></header>
 	<h1>Resources links</h1>
-	<a href="http://localhost:8080/vaccine-app/getVaccine.vaccine">Link for sign in page</a>
-	
-	
+	<a href="http://localhost:8080/vaccine-app/getVaccine.vaccine">Link
+		for sign in page</a>
+	<footer style="color: black;"></footer>
+
 </body>
 </head>
 </html>

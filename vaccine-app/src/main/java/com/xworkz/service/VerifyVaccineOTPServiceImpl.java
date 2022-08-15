@@ -1,5 +1,6 @@
 package com.xworkz.service;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,21 +14,26 @@ public class VerifyVaccineOTPServiceImpl implements VerifyVaccineOTPService {
 
 	@Autowired
 	private VaccineDAO vaccineDAO;
+	
+	static final Logger logger = Logger.getLogger(VerifyVaccineOTPServiceImpl.class);
 
 	public VerifyVaccineOTPServiceImpl() {
-		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+		logger.info(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	@Override
 	public boolean validateOTP(String otp) {
-		System.out.println("validateOTP() Invoked");
+//		System.out.println("validateOTP() Invoked");
+		logger.info("validateOTP() Invoked");
 		boolean flag = false;
 		if (!otp.isEmpty() && !otp.isBlank() && otp != null) {
 			flag = true;
-			System.out.println("valid otp");
+//			System.out.println("valid otp");
+			logger.info("valid otp");
 		} else {
 			flag = false;
-			System.out.println("Invalid otp ..enter correct 6 digit otp");
+//			System.out.println("Invalid otp ..enter correct 6 digit otp");
+			logger.info("Invalid otp ..enter correct 6 digit otp");
 			return flag;
 		}
 		return flag;
@@ -35,7 +41,8 @@ public class VerifyVaccineOTPServiceImpl implements VerifyVaccineOTPService {
 
 	@Override
 	public VaccineVerifyOTPDTO getVaccineOTP(String otp) {
-		System.out.println("getVaccineOTP() Invoked");
+//		System.out.println("getVaccineOTP() Invoked");
+		logger.info("getVaccineOTP() Invoked");
 		VaccineVerifyOTPDTO vaccineVerifyOTPDTO=null;
 		VaccineEntity vaccineEntity=this.vaccineDAO.findVaccineOTP(otp);
 		if (vaccineEntity != null) {

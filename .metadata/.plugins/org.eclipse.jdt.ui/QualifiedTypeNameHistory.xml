@@ -18,7 +18,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
     <fullyQualifiedTypeName name="java.lang.System.Logger"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
     <fullyQualifiedTypeName name="com.xworkz.dto.VaccineDTO"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -49,7 +48,9 @@
     <fullyQualifiedTypeName name="org.hibernate.query.Query"/>
     <fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="com.xworkz.dto.VaccineVerifyOTPDTO"/>
     <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
+    <fullyQualifiedTypeName name="java.lang.Module"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="com.xworkz.entity.VaccineEntity"/>
+    <fullyQualifiedTypeName name="com.xworkz.dto.VaccineVerifyOTPDTO"/>
 </qualifiedTypeNameHistroy>

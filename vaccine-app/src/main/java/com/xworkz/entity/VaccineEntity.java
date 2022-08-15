@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.apache.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
+
+import com.xworkz.dto.VaccineVerifyOTPDTO;
 
 @Entity
 @Table(name = "vaccine_table")
@@ -22,9 +25,11 @@ public class VaccineEntity {
 
 	@Column(name = "vaccine_otp")
 	private String otp;
+	
+	static final Logger logger = Logger.getLogger(VaccineEntity.class);
 
 	public VaccineEntity() {
-		System.out.println(this.getClass().getSimpleName() + " Bean crated ");
+		logger.info(this.getClass().getSimpleName() + " Bean crated ");
 	}
 
 	public int getId() {

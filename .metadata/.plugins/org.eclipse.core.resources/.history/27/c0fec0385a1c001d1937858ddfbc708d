@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vaccine form</title>
+<style>
+body {
+	text-align: center;
+}
+</style>
+<body>
+	<header style="color: black;"></header>
+	<h1>Enter OTP</h1>
+	<div>
+		<form action="verifyOTP.vaccine" method="post">
+			<input type="text" name="otp" placeholder="Enter otp"> <br>
+			<br> <input type="submit" value="Verify & Proceed "><br>
+			<a style="color: red">${OTP}</a>
+
+		</form>
+	</div>
+	<footer style="color: black;"></footer>
+</body>
+</head>
+</html>
