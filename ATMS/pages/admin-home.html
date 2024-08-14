@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Academic Task Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ATMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h2>Admin Dashboard</h2>
+        <p>Welcome to your dashboard. Here, you can manage tasks, view reports, and access key academic details.</p>
+        
+        <!-- Section: Task Management -->
+        <h3>Task Management</h3>
+        <div class="row">
+            <!-- Task 1 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Faculty Training Programs</h5>
+                        <p class="card-text">Manage and record faculty training sessions and track attendance and outcomes.</p>
+                        <a href="#" class="btn btn-primary">Manage</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Task 2 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Assessments</h5>
+                        <p class="card-text">Record and analyze student assessment data, including exams and projects.</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Task 3 -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Branch Activities</h5>
+                        <p class="card-text">Oversee branch-specific activities, events, and academic processes.</p>
+                        <a href="#" class="btn btn-primary">View Activities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section: Reports and Insights -->
+        <h3>Reports & Insights</h3>
+        <div class="row">
+            <!-- Insight 1 -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Faculty Performance</h5>
+                        <p class="card-text">View detailed reports on faculty performance across various metrics.</p>
+                        <a href="#" class="btn btn-secondary">Generate Report</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Insight 2 -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Performance</h5>
+                        <p class="card-text">Analyze student performance data to identify trends and areas for improvement.</p>
+                        <a href="#" class="btn btn-secondary">View Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Quick Actions -->
+        <h3>Quick Actions</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#" class="btn btn-success w-100 mb-3">Add New Task</a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-warning w-100 mb-3">Update Branch Details</a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-info w-100 mb-3">Manage Faculty</a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-danger w-100 mb-3">Manage Students</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
